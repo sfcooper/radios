@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Classic Radios</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Classic Radios", '../', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   '../' %></li>
+            <li><%= link_to "Radios",   radios_path %></li>
+            <li><%= link_to "Blog", articles_path %></li>
+            <li><%= link_to "About", '../about' %></li>
+            <li><%= link_to "Contact", '../contact' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>
