@@ -7,23 +7,41 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
 
   <body>
-      <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "Classic Radios", '../', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '../' %></li>
-            <li><%= link_to "Radios",   radios_path %></li>
-            <li><%= link_to "Blog", articles_path %></li>
-            <li><%= link_to "About", '../about' %></li>
-            <li><%= link_to "Contact", '../contact' %></li>
-          </ul>
-        </nav>
+    <div class="container">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+   <%= link_to "Classic Radios",   '../', class: "navbar-item" %>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <%= link_to "Home",   '../', class: "navbar-item" %>
+      <%= link_to "Radios", radios_path, class: "navbar-item" %>
+      <%= link_to "Blog", articles_path, class: "navbar-item" %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+
+            <%= link_to "About", '../about', class: "navbar-item" %>
+            <%= link_to "Contact", '../contact', class: "navbar-item" %>
       </div>
-    </header>
+    </div>
+  </div>
+</nav>
     <%= yield %>
+    </div>
   </body>
 </html>
